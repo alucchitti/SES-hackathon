@@ -10,9 +10,7 @@ function App() {
       <p>You're logged in!</p>
     );
   }else{
-    return (
-      <Login />
-    );
+    return (<Login />);
   }
 }
 
