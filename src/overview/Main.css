@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+#header{
+    background-color: var(--blue);
+    color: white;
+}
+  
+#Main #time_selection {
+    margin-right: 15px;
+}
+  

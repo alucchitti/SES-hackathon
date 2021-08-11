@@ -1,13 +1,17 @@
 import './App.css';
 import Cookies from 'js-cookie';
 import Login from './login/login.js';
+import Main from './overview/Main.js'
 
 function App() {
+  // return (
+  //   <Main />
+  // )
   var id = Cookies.get('accountId')
   console.log(id);
   if(id){
     return (
-      <p>You're logged in!</p>
+      <Main />
     );
   }else{
     return (
