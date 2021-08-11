@@ -1,7 +1,8 @@
 import './App.css';
 import Cookies from 'js-cookie';
+import Header from './header/header.js';
 import Login from './login/login.js';
-import Main from './overview/Main.js'
+import Main from './overview/Main.js';
 
 function App() {
   // return (
@@ -14,7 +15,11 @@ function App() {
       <Main />
     );
   }else{
-    return (<Login />);
+    return (
+      <div>
+        <Header/>
+        <Login />
+      </div>);
   }
 }
 

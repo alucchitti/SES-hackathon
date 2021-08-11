@@ -1,11 +1,38 @@
 .center{
+    margin: 0%;
+
     background-color: #CED6F4;
     width: 500px;
     height: 250px;
+    border-radius: 8%;
 }
 .center-wrapper{
     align-items: center;
     display: flex;
     justify-content: center;
 }
+#welcome{
+    margin-top: 12%;
+    margin-bottom: 3%;
+    font-family:'Roboto';
+    font-size: 36px;
+    text-align: center;
+}
 
+.signin{
+    text-align: center;
+}
+
+.button{
+    color: white;
+    padding: 1%;
+    border: black 1px solid;
+    border-radius: 10%;
+    background-color: #003A6F;
+}
+
+.textField{
+    border-radius: 10%;
+    border: black 1px solid;
+    padding: 1%;
+}

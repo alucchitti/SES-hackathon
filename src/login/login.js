@@ -36,9 +36,11 @@ class Login extends React.Component {
         return (
             <div className="center-wrapper">
                 <div className="center">
-                    Please login
-                    <input type="text" data-test="accountId" onChange={this.handleIdChange}/>
-                    <input type="submit" value="Log In" data-test="submit" onClick={this.handleSubmitevents}/>
+                    <p id="welcome">Welcome!</p>
+                    <div className="signin">
+                        <input type="text" data-test="accountId" placeholder="User ID" onChange={this.handleIdChange} className="textField"/>
+                        <input type="submit" value="Sign In" data-test="submit" onClick={this.handleSubmitevents} className="button"/>
+                    </div>
                 </div>
             </div>
         ) 
