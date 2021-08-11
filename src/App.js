@@ -14,9 +14,7 @@ function App() {
       <Main />
     );
   }else{
-    return (
-      <Login />
-    );
+    return (<Login />);
   }
 }
 
