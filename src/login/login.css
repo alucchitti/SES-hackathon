@@ -1,0 +1,11 @@
+.center{
+    background-color: #CED6F4;
+    width: 500px;
+    height: 250px;
+}
+.center-wrapper{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+

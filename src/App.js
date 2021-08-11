@@ -1,25 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Cookies from 'js-cookie';
+import Login from './login/login.js';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  var id = Cookies.get('accountId')
+  console.log(id);
+  if(id){
+    return (
+      <p>You're logged in!</p>
+    );
+  }else{
+    return (
+      <Login />
+    );
+  }
 }
 
 export default App;
