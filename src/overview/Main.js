@@ -53,7 +53,7 @@ class Main extends React.Component {
           })
           }).catch((err, response) => {
             console.log(err);
-            alert("error getting data")
+            alert("error getting data 2")
               Cookies.remove('accountId');
               window.location.reload();
         })
@@ -61,15 +61,6 @@ class Main extends React.Component {
         console.log(err);
     })
 
-    axios.get(`${baseUrl}/accounts/${this.id}?key=${apiKey}`).then((response) => {
-      console.log(response.data);
-      this.setState({balance: response.data.balance});
-      }).catch((err, response) => {
-        console.log(err);
-        alert("error getting data")
-          Cookies.remove('accountId');
-          window.location.reload();
-    })
   }
 
   render(){
@@ -91,8 +82,30 @@ class Main extends React.Component {
 };
 
 function Transactions(props){
+  props.transactions.sort(function(a, b){ //sort them by dates
+    console.log(new Date(a.date).getTime() + b.date + a.date)
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
+  })
+  var previousDate = null;
   const transactions = props.transactions.map((transaction) => {
-      return <div className="transaction">Paid ${transaction.amount} using {transaction.card}</div>
+      if(previousDate !== transaction.date){
+        previousDate = transaction.date;
+        return (
+          <div>
+            <div>{previousDate}</div>
+            <div className="transaction">
+              <div className="value">${transaction.amount}</div>
+              <div className="info">{transaction.card}</div>  
+            </div>
+          </div>
+        )
+      }
+      return (
+        <div className="transaction">
+          <div className="value">${transaction.amount}</div>
+          <div className="info">{transaction.card}</div>  
+        </div>
+      )
   })
   console.log(transactions);
   return(

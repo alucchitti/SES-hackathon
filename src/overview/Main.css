@@ -58,4 +58,24 @@ hr{
     border-radius: 5px;
     height: 80px;
     margin-top: 10px;
+    border: var(--dark-gray) 2px solid;
+}
+
+.transaction .value{
+    text-align: center;
+    width: 50px;
+    background-color: var(--dark-gray);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    float: left;
+    color: var(--light-gray)
+}
+.transaction .info{
+    height: 100%;
+    float: left;
+    margin-left: 3px;
+    color: var(--light-gray)
 }
