@@ -1,13 +1,15 @@
 import './Pie.css';
 import { Pie } from 'react-chartjs-2';
 
-function PieChart() {
-  const data = {
+
+function PieChart(props) {
+
+  var data = {
     labels: ['Yellow', 'Green', 'Purple', 'Orange'],
     datasets: [
       {
         label: '# of Votes',
-        data: [3, 5, 2, 3],
+        data: props.budgetValues,
         backgroundColor: [
           'rgba(255, 206, 86, 0.2)',
           'rgba(75, 192, 192, 0.2)',
@@ -26,7 +28,9 @@ function PieChart() {
   };
 
   return (
+    <>
       <Pie data={data} />
+      </>
   );
 }
 

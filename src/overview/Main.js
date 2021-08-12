@@ -16,7 +16,6 @@ const Main = () => {
           <LineChart />
         </div>
         <div className="center">
-          <PieChart />
         </div>
       </div>
     </div>
