@@ -85,3 +85,6 @@ hr{
     margin-left: 3px;
     color: var(--light-gray)
 }
+.logout{
+    float:right;
+}

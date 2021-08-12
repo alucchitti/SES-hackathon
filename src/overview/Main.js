@@ -20,7 +20,12 @@ class Main extends React.Component {
       lastName: null,
       purchaseData: []
     }
+    this.handleSubmitevents = this.handleSubmitevents.bind(this)
   }
+  handleSubmitevents() {
+    Cookies.remove('accountId')
+    window.location.reload();
+}
   componentDidMount(){
     var self = this;
     axios.get(`${baseUrl}/merchants?key=${apiKey}`).then((response) => { //get all merchants
@@ -33,16 +38,17 @@ class Main extends React.Component {
             console.log(response.data);
               response.data.forEach(card => {
                 axios.get(`${baseUrl}/accounts/${card._id}/purchases?key=${apiKey}`).then((response) => { //get all purchases under each of the customers accounts
-                  response.data.forEach(element => {
-                    var merchant = this.merchants.filter(function(merchant) { //match merchant id to the merchant
+                  response.data.forEach(async element => {
+                    //console.log(element.merchant._id)
+                    var merchant_info = await this.merchants.filter(function(merchant) { //match merchant id to the merchant
                         return merchant._id === element.merchant_id; 
                     })
                     this.setState({ purchaseData: [...this.state.purchaseData, {
                       date: element.purchase_date,
                       amount: element.amount,
                       merchant_id: element.merchant_id,
-                      merchant_name: merchant[0].name,
-                      merchant_category: merchant[0].category,
+                      merchant_name: merchant_info[0].name,
+                      merchant_category: merchant_info[0].category,
                       card: card.nickname
                     }]})
                   });
@@ -67,7 +73,11 @@ class Main extends React.Component {
     return(
       <div id="Main">
       <div>
-        <p id="header"><img src={logo} alt="Smart Budget logo"></img></p>
+        <p id="header"><img src={logo} alt="Smart Budget logo"></img>
+          <div className="logout">
+            <input type="submit" value="Logout" data-test="submit" onClick={this.handleSubmitevents} className="button" />
+          </div>
+        </p>
       </div>
       
         <div className="center">
