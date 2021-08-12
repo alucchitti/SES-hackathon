@@ -31,15 +31,6 @@ hr{
     margin-bottom: 5%;
 }
 
- .center{
-    background-color: var(--grey);
-    margin: 0%;
-    width: 75%;
-    /* width: 500px;
-    height: 250px; */
-    border-radius: 8%;
-    width: 100%;
-}  
 #Main{
     overflow-y: scroll;
     padding-top:10px;

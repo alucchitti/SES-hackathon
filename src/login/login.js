@@ -38,9 +38,8 @@ class Login extends React.Component {
     render(){
         console.log(this.state.accountId);
         return (
-            <div>
-            <div className="center-wrapper">
-                <div className="center3">
+            <div className="center-wrapper-login">
+                <div className="center-login">
                     <img className="logo" src={SmartBudgetLogo} alt="Logo" width="350"/>                  
                     <div className="signin">
                         <input type="text" data-test="accountId" placeholder="User ID" onChange={this.handleIdChange} className="textField"/>
@@ -51,8 +50,6 @@ class Login extends React.Component {
                         {this.state.error && <p className="error">Login failed.</p>}
                     </div>
                 </div>
-            </div>
-            <Footer />
             </div>
         ) 
     }
