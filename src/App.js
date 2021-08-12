@@ -1,25 +1,16 @@
-import './App.css';
-import Cookies from 'js-cookie';
-import Header from './header/header.js';
-import Login from './login/login.js';
-import Main from './overview/Main.js';
+import "./App.css";
+import Cookies from "js-cookie";
+import Login from "./login/login.js";
+import Main from "./overview/Main.js";
 
 function App() {
-  // return (
-  //   <Main />
-  // )
-  var id = Cookies.get('accountId')
+
+  var id = Cookies.get("accountId");
   console.log(id);
-  if(id){
-    return (
-      <Main />
-    );
-  }else{
-    return (
-      <div>
-        <Header/>
-        <Login />
-      </div>);
+  if (id) {
+    return <Main />;
+  } else {
+    return <Login />;
   }
 }
 

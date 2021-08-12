@@ -5,10 +5,8 @@ const Main = () => {
 
     return (
         <div id='Main'>
-            <div id='header'>
-                <h1>Transaction Overview</h1>
-            </div>
-            <hr/>
+            <h1 id='header'>Transaction Overview</h1>
+            <hr id="spacer"/>
         </div>
     )
 }

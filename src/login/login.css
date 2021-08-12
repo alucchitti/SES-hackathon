@@ -29,6 +29,7 @@
     border: black 1px solid;
     border-radius: 10%;
     background-color: #003A6F;
+    cursor: pointer;
 }
 
 .textField{

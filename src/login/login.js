@@ -3,6 +3,7 @@ import '../App.css';
 import './login.css';
 import Cookies from 'js-cookie';
 import axios from "axios";
+import Header from '../header/header';
 
 var apiKey = '1cb35cfe6eeba07ad5afa33e1e997d12'
 var baseUrl = 'http://api.nessieisreal.com'
@@ -34,6 +35,8 @@ class Login extends React.Component {
     render(){
         console.log(this.state.accountId);
         return (
+            <div>
+            <Header/>
             <div className="center-wrapper">
                 <div className="center">
                     <p id="welcome">Welcome!</p>
@@ -42,6 +45,7 @@ class Login extends React.Component {
                         <input type="submit" value="Sign In" data-test="submit" onClick={this.handleSubmitevents} className="button"/>
                     </div>
                 </div>
+            </div>
             </div>
         ) 
     }

@@ -1,13 +1,19 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 #header{
-    background-color: var(--blue);
-    color: white;
+    /* background-color: var(--blue); */
+    /* color: white; */
 }
   
-#Main #time_selection {
+#Main #header {
     margin-right: 15px;
+}
+#Main #spacer{
+    padding: .5% 0 0 0;
+    background-color: blue;
+
 }
   
