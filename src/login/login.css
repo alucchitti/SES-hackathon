@@ -7,6 +7,10 @@
     --dark-gray: #3D3D3D;
   }
 
+  .error{
+      color: var(--red-cap);
+      font-size: 10pt;
+  }
 body{
     background: url(./background.jpg); 
     background-size: cover;
@@ -23,6 +27,7 @@ body{
     align-items: center;
     padding-top: 30px;
 }
+
 
 .center-wrapper{
     position: absolute;
@@ -66,3 +71,5 @@ body{
     border-color: #185389;
     outline: none;
 }
+
+

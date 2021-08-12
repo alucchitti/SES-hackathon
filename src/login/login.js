@@ -12,7 +12,7 @@ var baseUrl = 'http://api.nessieisreal.com'
 class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { accountId: "Account ID"};
+        this.state = { accountId: "Account ID", error: false};
         this.handleSubmitevents = this.handleSubmitevents.bind(this)
         this.handleIdChange = this.handleIdChange.bind(this)
     }
@@ -22,11 +22,13 @@ class Login extends React.Component {
         axios.get(`${baseUrl}/customers/${this.state.accountId}?key=${apiKey}`).then((response) => {
             console.log(response.data);
             if(response.data._id){
+                this.setState({error: false})
                 Cookies.set('accountId', response.data._id);
                 window.location.reload();
             }
         }).catch((err, response) => {
             console.log(`There was an error signing you in ${err}`);
+            this.setState({error: true})
         })
         //window.location.reload();
     }
@@ -43,7 +45,11 @@ class Login extends React.Component {
                     
                     <div className="signin">
                         <input type="text" data-test="accountId" placeholder="User ID" onChange={this.handleIdChange} className="textField"/>
-                        <input type="submit" value="Sign In" data-test="submit" onClick={this.handleSubmitevents} className="button"/>
+                        <br></br>
+                        <input type="submit" value="Sign In" data-test="submit" onClick={this.handleSubmitevents} className="button">
+                            
+                        </input>
+                        {this.state.error && <p className="error">Login failed.</p>}
                     </div>
                 </div>
             </div>
