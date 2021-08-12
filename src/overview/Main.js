@@ -83,7 +83,6 @@ class Main extends React.Component {
 
 function Transactions(props){
   props.transactions.sort(function(a, b){ //sort them by dates
-    console.log(new Date(a.date).getTime() + b.date + a.date)
     return new Date(b.date).getTime() - new Date(a.date).getTime()
   })
   var previousDate = null;
@@ -92,7 +91,7 @@ function Transactions(props){
         previousDate = transaction.date;
         return (
           <div>
-            <div>{previousDate}</div>
+            <div className="date">{previousDate}</div>
             <div className="transaction">
               <div className="value">${transaction.amount}</div>
               <div className="info">{transaction.card}</div>  
@@ -103,7 +102,12 @@ function Transactions(props){
       return (
         <div className="transaction">
           <div className="value">${transaction.amount}</div>
-          <div className="info">{transaction.card}</div>  
+          <div className="info">
+            <div>
+              {transaction.card}
+            </div>
+            {transaction.merchant_name}
+          </div>  
         </div>
       )
   })
