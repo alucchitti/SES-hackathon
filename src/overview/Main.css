@@ -15,4 +15,19 @@
 hr{
     background-color: var(--blue);
     border: 3px var(--blue) solid;
+    margin-bottom: 5%;
+}
+
+.center{
+    background-color: var(--grey);
+    margin: 0%;
+    width: 500px;
+    height: 250px;
+    border-radius: 8%;
+}
+.center-wrapper{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
 }

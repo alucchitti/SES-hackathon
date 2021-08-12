@@ -6,7 +6,7 @@ class Header extends React.Component {
     render(){
         return (
             <div className="center-wrapper">
-                <p className="name">BudgetSmart</p>
+                <p className="name">SmartBudget</p>
             </div>
         )
     }
