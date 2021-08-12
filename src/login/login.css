@@ -1,7 +1,7 @@
 .center{
     margin: 0%;
 
-    background-color: #CED6F4;
+    background-color:var(--lightblue);
     width: 500px;
     height: 250px;
     border-radius: 8%;
