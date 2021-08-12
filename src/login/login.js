@@ -36,10 +36,10 @@ class Login extends React.Component {
         console.log(this.state.accountId);
         return (
             <div>
-            <Header/>
             <div className="center-wrapper">
-                <div className="center">
+                <div className="center2">
                     <p id="welcome">Welcome!</p>
+                    
                     <div className="signin">
                         <input type="text" data-test="accountId" placeholder="User ID" onChange={this.handleIdChange} className="textField"/>
                         <input type="submit" value="Sign In" data-test="submit" onClick={this.handleSubmitevents} className="button"/>

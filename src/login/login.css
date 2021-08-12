@@ -1,18 +1,36 @@
-.center{
-    margin: 0%;
+:root {
+    --blue-cap: #185389;
+    --red-cap: #AC101A;
+    --yellow-cap: #FCE400;
+    --light-gray: #F4F4F4;
+    --mid-gray: #515252;
+    --dark-gray: #3D3D3D;
 
-    background-color:var(--lightblue);
-    width: 500px;
-    height: 250px;
-    border-radius: 8%;
+  }
+
+body{
+    background: url(./background.jpg);
+    background-size: cover;
+}
+.center2{
+    margin: 0%;
+    background-color: var(--light-gray);
+    width: 400px;
+    height: 150px;
+    box-shadow: 0 0 5px 5px var(--dark-gray);
 }
 .center-wrapper{
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	
+	margin: auto;
+
 }
 #welcome{
-    margin-top: 12%;
+    color: black;
     margin-bottom: 3%;
     font-family:'Roboto';
     font-size: 36px;
@@ -24,16 +42,28 @@
 }
 
 .button{
-    color: white;
-    padding: 1%;
-    border: black 1px solid;
-    border-radius: 10%;
-    background-color: #003A6F;
+    color: black;
+    height: 30px;
+    border: black 2px solid;
+    border-radius: 0px 5px 5px 0px;
+    background-color: var(--blue-cap);
     cursor: pointer;
+    width: 75px;
 }
 
+
 .textField{
-    border-radius: 10%;
-    border: black 1px solid;
-    padding: 1%;
+    border-radius: 5px 0px 0px 5px;
+    border: black 2px solid;
+    height: 30px;
+    width: 200px;
+    background: url(./person.png) no-repeat scroll 6px 5px;
+    background-size: 16px 16px;
+    padding-left: 30px;
+}
+.textField:focus{
+    border-radius: 5px 0px 0px 5px;
+    border-width: 2px;
+    border-color: #185389;
+    outline: none;
 }
