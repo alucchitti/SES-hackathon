@@ -9,7 +9,7 @@
   }
 
 body{
-    background: url(./background.jpg);
+    background: url(./background.jpg); 
     background-size: cover;
 }
 .center2{
@@ -49,6 +49,7 @@ body{
     background-color: var(--blue-cap);
     cursor: pointer;
     width: 75px;
+    margin: 2% 0 0 0;
 }
 
 
