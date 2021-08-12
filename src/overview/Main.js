@@ -11,13 +11,13 @@ const Main = () => {
                 <h1>Budget Overview</h1>
             </div>
             <hr/>
-            <div className="center-wrapper">
-                <div className="center">
+            <div className="center-wrapper1">
+                <div className="center1">
                     <LineChart/>
                 </div>
             </div>
-            <div className="center-wrapper">
-                <div className="center">
+            <div className="center-wrapper1">
+                <div className="center1">
                     <PieChart/>
                 </div>
             </div>

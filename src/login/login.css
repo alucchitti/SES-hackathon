@@ -5,7 +5,6 @@
     --light-gray: #F4F4F4;
     --mid-gray: #515252;
     --dark-gray: #3D3D3D;
-
   }
 
 body{
@@ -18,7 +17,9 @@ body{
     width: 400px;
     height: 150px;
     box-shadow: 0 0 5px 5px var(--dark-gray);
+    border-radius: 3%;
 }
+
 .center-wrapper{
     position: absolute;
 	top:0;
@@ -26,9 +27,9 @@ body{
 	left: 0;
 	right: 0;
   	
-	margin: auto;
-
+    margin: 0;
 }
+
 #welcome{
     color: black;
     margin-bottom: 3%;
@@ -39,6 +40,7 @@ body{
 
 .signin{
     text-align: center;
+    padding-bottom: 20px;
 }
 
 .button{
