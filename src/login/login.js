@@ -3,8 +3,8 @@ import '../App.css';
 import './login.css';
 import Cookies from 'js-cookie';
 import axios from "axios";
-import Header from '../header/header';
 import Footer from '../footer/footer';
+import SmartBudgetLogo from './SmartBudgetLogo.png'
 
 var apiKey = '1cb35cfe6eeba07ad5afa33e1e997d12'
 var baseUrl = 'http://api.nessieisreal.com'
@@ -41,8 +41,7 @@ class Login extends React.Component {
             <div>
             <div className="center-wrapper">
                 <div className="center3">
-                    Welcome Back!
-                    
+                    <img className="logo" src={SmartBudgetLogo} alt="Logo" width="350"/>                  
                     <div className="signin">
                         <input type="text" data-test="accountId" placeholder="User ID" onChange={this.handleIdChange} className="textField"/>
                         <br></br>

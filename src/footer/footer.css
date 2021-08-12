@@ -5,3 +5,7 @@
     left: 0;
     text-align: center;
 }
+
+.footer-wrapper img {
+    filter: drop-shadow(2px 2px 7px white);
+}
