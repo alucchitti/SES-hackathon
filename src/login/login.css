@@ -1,6 +1,6 @@
 .center{
     margin: 0%;
-
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color:var(--lightblue);
     width: 500px;
     height: 250px;
@@ -28,8 +28,13 @@
     padding: 1%;
     border: black 1px solid;
     border-radius: 10%;
-    background-color: #003A6F;
+    background-color: var(--red);
     cursor: pointer;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: var(--blue);
 }
 
 .textField{
