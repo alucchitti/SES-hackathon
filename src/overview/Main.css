@@ -1,13 +1,18 @@
 * {
     box-sizing: border-box;
+    color: black;
 }
 
 #header{
-    background-color: var(--blue);
-    color: white;
+    margin: 5% 5% 0 5%;
+    font-family:'Roboto';
 }
   
 #Main #time_selection {
     margin-right: 15px;
 }
-  
+
+hr{
+    background-color: var(--blue);
+    border: 3px var(--blue) solid;
+}

@@ -5,9 +5,11 @@ import Login from './login/login.js';
 import Main from './overview/Main.js';
 
 function App() {
-  // return (
-  //   <Main />
-  // )
+  /* Uncomment this code to see graph dashboard
+   return (
+     <Main />
+   )
+  */
   var id = Cookies.get('accountId')
   console.log(id);
   if(id){
@@ -21,6 +23,7 @@ function App() {
         <Login />
       </div>);
   }
+  
 }
 
 export default App;
