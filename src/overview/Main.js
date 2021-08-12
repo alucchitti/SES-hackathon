@@ -29,7 +29,18 @@ class Main extends React.Component {
           Cookies.remove('accountId');
           window.location.reload();
     })
+
+    axios.get(`${baseUrl}/accounts/${this.id}?key=${apiKey}`).then((response) => {
+      console.log(response.data);
+      this.setState({balance: response.data.balance});
+      }).catch((err, response) => {
+        console.log(err);
+        alert("error getting data")
+          Cookies.remove('accountId');
+          window.location.reload();
+    })
   }
+
   render(){
     return(
       <div id="Main">
@@ -38,6 +49,10 @@ class Main extends React.Component {
       </div>
       <hr id="spacer" />
       <div className="center-wrapper">
+        <div>
+          {this.state.balance}
+          Current Balance
+        </div>
         <div className="center">
           <LineChart />
         </div>
