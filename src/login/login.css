@@ -1,5 +1,5 @@
 :root {
-    --blue-cap: #185389;
+    --blue-cap: #255F82;
     --red-cap: #AC101A;
     --yellow-cap: #FCE400;
     --light-gray: #F4F4F4;
@@ -12,12 +12,17 @@ body{
     background: url(./background.jpg);
     background-size: cover;
 }
-.center2{
-    margin: 0%;
+.center3{
     background-color: var(--light-gray);
-    width: 400px;
+    width: 350px;
     height: 150px;
-    box-shadow: 0 0 5px 5px var(--dark-gray);
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.52);
+	-moz-box-shadow:    0px 10px 20px 0px rgba(50, 50, 50, 0.52);
+	box-shadow:         0px 10px 20px 0px rgba(50, 50, 50, 0.52);
+    text-align: center;
+    justify-content: center; 
+    align-items: center;
+    padding-top: 30px;
 }
 .center-wrapper{
     position: absolute;
@@ -29,31 +34,25 @@ body{
 	margin: auto;
 
 }
-#welcome{
-    color: black;
-    margin-bottom: 3%;
-    font-family:'Roboto';
-    font-size: 36px;
-    text-align: center;
-}
 
 .signin{
     text-align: center;
 }
 
 .button{
-    color: black;
-    height: 30px;
-    border: black 2px solid;
-    border-radius: 0px 5px 5px 0px;
+    margin: 3px;
+    color: var(--light-gray);
+    height: 28px;
+    border: var(--blue-cap) 2px solid;
+    border-radius: 2px;
     background-color: var(--blue-cap);
     cursor: pointer;
-    width: 75px;
+    width: 125px;
 }
 
 
 .textField{
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 5px;
     border: black 2px solid;
     height: 30px;
     width: 200px;
@@ -62,7 +61,7 @@ body{
     padding-left: 30px;
 }
 .textField:focus{
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 5px;
     border-width: 2px;
     border-color: #185389;
     outline: none;

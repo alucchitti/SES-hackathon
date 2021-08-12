@@ -38,8 +38,8 @@ class Login extends React.Component {
         return (
             <div>
             <div className="center-wrapper">
-                <div className="center2">
-                    <p id="welcome">Welcome!</p>
+                <div className="center3">
+                    Welcome Back!
                     
                     <div className="signin">
                         <input type="text" data-test="accountId" placeholder="User ID" onChange={this.handleIdChange} className="textField"/>
