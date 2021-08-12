@@ -5,11 +5,10 @@
     --light-gray: #F4F4F4;
     --mid-gray: #515252;
     --dark-gray: #3D3D3D;
-
   }
 
 body{
-    background: url(./background.jpg);
+    background: url(./background.jpg); 
     background-size: cover;
 }
 .center3{
@@ -24,6 +23,7 @@ body{
     align-items: center;
     padding-top: 30px;
 }
+
 .center-wrapper{
     position: absolute;
 	top:0;
@@ -31,12 +31,12 @@ body{
 	left: 0;
 	right: 0;
   	
-	margin: auto;
-
+    margin: 0;
 }
 
 .signin{
     text-align: center;
+    padding-bottom: 20px;
 }
 
 .button{
