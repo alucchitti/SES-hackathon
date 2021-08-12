@@ -10,6 +10,7 @@ import axios from "axios";
 
 var apiKey = '1cb35cfe6eeba07ad5afa33e1e997d12'
 var baseUrl = 'http://api.nessieisreal.com'
+var categories = ['furniture', 'tech', 'food', 'health'];
 
 class Main extends React.Component {
   constructor(props){
@@ -46,12 +47,18 @@ class Main extends React.Component {
                         }
                         return merchant._id === element.merchant_id; 
                     })
+                    var category = await categories.filter(function (category) {
+                      return category === element.description
+                    })
+                    if(category[0] == null){
+                      category.push("other")
+                    }
                     var newData = {
                       date: element.purchase_date,
                       amount: element.amount,
                       merchant_id: element.merchant_id,
                       merchant_name: merchant_info[0].name,
-                      merchant_category: merchant_info[0].category,
+                      merchant_category: category[0],
                       card: card.nickname
                     }
                     console.log(newData);
@@ -114,7 +121,10 @@ function Transactions(props){
               {transaction.card}
             </div>
             {transaction.merchant_name}
-          </div>   
+            <div>
+            {transaction.merchant_category}
+            </div>
+          </div>  
             </div>
           </div>
         )
@@ -127,6 +137,9 @@ function Transactions(props){
               {transaction.card}
             </div>
             {transaction.merchant_name}
+            <div>
+            {transaction.merchant_category}
+            </div>
           </div>  
         </div>
       )
