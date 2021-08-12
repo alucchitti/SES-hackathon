@@ -2,7 +2,7 @@ import "../App.css";
 import Cookies from "js-cookie";
 import "./Main.css";
 /* Chartjs Examples: https://reactchartjs.github.io/react-chartjs-2/#/ */
-import LineChart from "../line/Line.js";
+import LineChart from "../line/LineChart.js";
 import React from 'react';
 import logo from './SmartBudget.png';
 import PieChart from "../pie/Pie.js";
@@ -44,7 +44,7 @@ class Main extends React.Component {
                         if(merchant._id === element.merchant_id){
                           console.log("found merchant!")
                         }
-                        return merchant._id === element.merchant_id; 
+                        return merchant._id === element.merchant_id;
                     })
                     var newData = {
                       date: element.purchase_date,
@@ -84,9 +84,10 @@ class Main extends React.Component {
           </div>
         </p>
       </div>
-      
+
         <div className="center">
-          <LineChart />
+        { console.log(this.state.purchaseData) }
+          <LineChart data={this.state.purchaseData}/>
         </div>
         <br></br>
 
@@ -114,7 +115,7 @@ function Transactions(props){
               {transaction.card}
             </div>
             {transaction.merchant_name}
-          </div>   
+          </div>
             </div>
           </div>
         )
@@ -127,7 +128,7 @@ function Transactions(props){
               {transaction.card}
             </div>
             {transaction.merchant_name}
-          </div>  
+          </div>
         </div>
       )
   })

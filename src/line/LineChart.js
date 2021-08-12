@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import { Line } from 'react-chartjs-2';
-import * as ChartAnnotation from 'chartjs-plugin-annotation';
+//import * as ChartAnnotation from 'chartjs-plugin-annotation';
 
 const budgetLimit = 110;
 
@@ -55,14 +55,17 @@ class LineChart extends React.Component {
 
     this.graphOptions = options;
     this.graphData = props.data;
+    console.log("print data");
+    console.log(props.data);
 
     // idk if we need state?
   }
 
+
   render() {
     return (
       <div className="line-chart-container">
-        <Line data={this.graphData} options={this.graphOptions} plugins={[ChartAnnotation]} />
+        <Line data={this.graphData} options={this.graphOptions} />
       </div>
     );
   }
