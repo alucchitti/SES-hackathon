@@ -14,19 +14,16 @@
 }
 
 #header{
-    margin: 1% 5% 0 2%;
+    background-color: white;
     font-family:'Roboto';
     font-weight: 800;
-    font-size: 250%;
+    font-size: 25pt;
+    height:100px;
+    line-height: 100px;
 }
   
 #Main #header {
-    margin-right: 15px;
-}
-#Main #spacer{
-    padding: .5% 0 0 0;
-    background-color: blue;
-    margin: 0 2%;
+    border-bottom: 1px solid #d4d4d4;
 }
 hr{
     background-color: var(--blue);
@@ -37,19 +34,28 @@ hr{
  .center{
     background-color: var(--grey);
     margin: 0%;
+    width: 75%;
     /* width: 500px;
     height: 250px; */
     border-radius: 8%;
-}  
-.center-wrapper{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5%;
+    width: 100%;
 }  
 #Main{
+    overflow-y: scroll;
+    padding-top:10px;
     background-color: var(--light-gray);
-    max-width: 1000px;
+    max-width: 1500px;
     margin: auto;
     height: 100vh;
+}
+
+.transactions{
+}
+.transaction{
+    margin: auto;
+    width: 450px;
+    background-color: var(--blue-cap);
+    border-radius: 5px;
+    height: 80px;
+    margin-top: 10px;
 }
