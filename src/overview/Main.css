@@ -1,3 +1,12 @@
+:root {
+    --blue-cap: #255F82;
+    --red-cap: #AC101A;
+    --yellow-cap: #FCE400;
+    --light-gray: #F4F4F4;
+    --mid-gray: #515252;
+    --dark-gray: #3D3D3D;
+  }
+
 * {
     box-sizing: border-box;
     color: black;
@@ -38,3 +47,9 @@ hr{
     justify-content: center;
     margin-bottom: 5%;
 }  
+#Main{
+    background-color: var(--light-gray);
+    max-width: 1000px;
+    margin: auto;
+    height: 100vh;
+}
