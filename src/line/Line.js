@@ -1,5 +1,6 @@
 import './Line.css';
 import { Line } from 'react-chartjs-2';
+import PieChart from '../pie/Pie.js';
 
 const data = {
     labels: ['1', '2', '3', '4', '5', '6'],
@@ -13,7 +14,7 @@ const data = {
       },
     ],
 };
-  
+
 const options = {
     scales: {
       yAxes: [
@@ -24,6 +25,12 @@ const options = {
         },
       ],
     },
+
+    /* when a dot is clicked on , show new pie chart*/
+    onClick: (e) => {
+      alert("change UI to show new pie");
+    }
+
 };
 
 const LineChart = () => (
