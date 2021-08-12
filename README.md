@@ -1,4 +1,4 @@
-# Budget Watch
+# Smart Budget
 
 ### Submission to Capital One's Software Engineering Summit Hackathon
 

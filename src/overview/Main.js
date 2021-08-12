@@ -60,7 +60,18 @@ class Main extends React.Component {
       }).catch((err, response) => {
         console.log(err);
     })
+
+    axios.get(`${baseUrl}/accounts/${this.id}?key=${apiKey}`).then((response) => {
+      console.log(response.data);
+      this.setState({balance: response.data.balance});
+      }).catch((err, response) => {
+        console.log(err);
+        alert("error getting data")
+          Cookies.remove('accountId');
+          window.location.reload();
+    })
   }
+
   render(){
     return(
       <div id="Main">
