@@ -39,18 +39,23 @@ class Main extends React.Component {
               response.data.forEach(card => {
                 axios.get(`${baseUrl}/accounts/${card._id}/purchases?key=${apiKey}`).then((response) => { //get all purchases under each of the customers accounts
                   response.data.forEach(async element => {
-                    //console.log(element.merchant._id)
+                    console.log(element.merchant_id)
                     var merchant_info = await this.merchants.filter(function(merchant) { //match merchant id to the merchant
+                        if(merchant._id === element.merchant_id){
+                          console.log("found merchant!")
+                        }
                         return merchant._id === element.merchant_id; 
                     })
-                    this.setState({ purchaseData: [...this.state.purchaseData, {
+                    var newData = {
                       date: element.purchase_date,
                       amount: element.amount,
                       merchant_id: element.merchant_id,
                       merchant_name: merchant_info[0].name,
                       merchant_category: merchant_info[0].category,
                       card: card.nickname
-                    }]})
+                    }
+                    console.log(newData);
+                    this.setState({ purchaseData: [...this.state.purchaseData, newData]})
                   });
                 })
               });
@@ -104,7 +109,12 @@ function Transactions(props){
             <div className="date">{previousDate}</div>
             <div className="transaction">
               <div className="value">${transaction.amount}</div>
-              <div className="info">{transaction.card}</div>  
+              <div className="info">
+            <div>
+              {transaction.card}
+            </div>
+            {transaction.merchant_name}
+          </div>   
             </div>
           </div>
         )
