@@ -122,9 +122,6 @@ function Transactions(props){
               {transaction.card}
             </div>
             {transaction.merchant_name}
-            <div>
-            {transaction.merchant_category}
-            </div>
           </div>
             </div>
           </div>

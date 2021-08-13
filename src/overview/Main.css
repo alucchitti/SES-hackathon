@@ -9,7 +9,7 @@
 
 * {
     box-sizing: border-box;
-    color: black;
+    color: white;
     margin: 0;
 }
 
@@ -20,6 +20,10 @@
     font-size: 25pt;
     height:100px;
     line-height: 100px;
+}
+
+.date{
+    color: var(--dark-gray);
 }
   
 #Main #header {
