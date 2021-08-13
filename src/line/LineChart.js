@@ -21,7 +21,8 @@ class LineChart extends React.Component {
 
     this.graphData = props;
     this.state = {
-      pieChartValues: null, // pie chart values reflect data of current dot on line graph
+      pieChartValues: null,
+      pieChartLabels: null // pie chart values reflect data of current dot on line graph
     }
 
     // idk if we need state?
@@ -75,17 +76,16 @@ class LineChart extends React.Component {
 
       /* when a dot is clicked on , show new pie chart*/
       onClick: (e, indexSource) => {
+        if(indexSource[0] == null){
+          return;
+        }
+        
+       console.log(indexSource);
         var indexForDate = indexSource[0].index;
         // use index to find date
 
         var date = labels[indexForDate];
         console.log("date: "  + date);
-
-        var categoryFood = 0;
-        var categoryEntertain = 0;
-        var categoryTech = 0;
-        var categoryHealth = 0;
-        var categoryHealth = 0;
 
         let categories = [];
 
@@ -94,14 +94,19 @@ class LineChart extends React.Component {
         for (let transaction = 0; transaction < this.props.data.length; transaction++) {
           if (this.props.data[transaction]["date"] === date) {
             // figure out which category to add to
-            if (this.props.data[transaction]["merchant_category"] === "food") {
-              categoryFood += this.props.data[transaction]["amount"];
+            if(categories[this.props.data[transaction]["merchant_category"]] != null){
+              categories[this.props.data[transaction]["merchant_category"]] += this.props.data[transaction]["amount"];
+            } else{
+              categories[this.props.data[transaction]["merchant_category"]] = this.props.data[transaction]["amount"];
             }
           }
         }
 
-
-          this.setState({ pieChartValues: [categoryFood, categoryEntertain, categoryTech, e.x, e.y]}) // pie values depend on current point's x and y
+          this.setState({ pieChartValues: Object.values(categories), pieChartLabels: Object.keys(categories)});// pie values depend on current point's x and y
+          console.log("labels");
+          console.log(this.state.pieChartLabels);
+          console.log("values");
+          console.log(this.state.pieChartValues);
       }
     }
 
@@ -111,7 +116,7 @@ class LineChart extends React.Component {
         <Line data={ldata} options={options} />
 
         { /* condition ? what gets displayed when condition true : when condition false */
-          this.state.pieChartValues !== null ? <PieChart budgetValues={this.state.pieChartValues}/> : <></> }
+          this.state.pieChartValues !== null ? <PieChart budgetValues={this.state.pieChartValues} categoryLabels={this.state.pieChartLabels}/> : <></> }
       </div>
     );
   }

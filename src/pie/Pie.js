@@ -5,11 +5,11 @@ import { Pie } from 'react-chartjs-2';
 function PieChart(props) {
 
   var data = {
-    labels: ['Yellow', 'Green', 'Purple', 'Orange'],
+    labels: props.categoryLabels, // Input categories
     datasets: [
       {
         label: '# of Votes',
-        data: props.budgetValues,
+        data: props.budgetValues,// Money sums for each category props.budgetValues,
         backgroundColor: [
           'rgba(255, 206, 86, 0.2)',
           'rgba(75, 192, 192, 0.2)',
