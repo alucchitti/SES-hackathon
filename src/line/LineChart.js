@@ -54,18 +54,39 @@ class LineChart extends React.Component {
     super(props);
 
     this.graphOptions = options;
-    this.graphData = props.data;
-    console.log("print data");
-    console.log(props.data);
+    this.graphData = props;
 
     // idk if we need state?
   }
 
 
   render() {
+    console.log(this.props.data);
+    let dict = [];
+    for(let i = 0; i < this.props.data.length; i++){
+      if(dict[this.props.data[i]["date"]] != null){
+        dict[this.props.data[i]["date"]] += this.props.data[i]["amount"];
+      } else{
+        dict[this.props.data[i]["date"]] = this.props.data[i]["amount"];
+      }
+    }
+    console.log(dict);
+    let labels = Object.keys(dict);
+    let ldata = {
+      labels: labels,
+      datasets: [{
+        labels: "My Spending",
+        data: Object.values(dict),
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+      }]
+    };
+
+
     return (
       <div className="line-chart-container">
-        <Line data={this.graphData} options={this.graphOptions} />
+        <Line data={ldata} options={this.graphOptions} />
       </div>
     );
   }
