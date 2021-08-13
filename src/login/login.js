@@ -42,7 +42,7 @@ class Login extends React.Component {
                 <div className="center-login">
                     <img className="logo" src={SmartBudgetLogo} alt="Logo" width="350"/>                  
                     <div className="signin">
-                        <input type="text" data-test="accountId" placeholder="User ID" onChange={this.handleIdChange} className="textField"/>
+                        <input id="accountID_text" type="text" data-test="accountId" placeholder="User ID" onChange={this.handleIdChange} className="textField"/>
                         <br></br>
                         <input type="submit" value="Sign In" data-test="submit" onClick={this.handleSubmitevents} className="button">
                             
