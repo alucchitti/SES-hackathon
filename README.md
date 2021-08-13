@@ -8,4 +8,8 @@ Link to Figma ideation [here](https://www.figma.com/file/HZvelZifR9xISJg3ZF8Qvf/
 
 Link to slides [here](https://docs.google.com/presentation/d/1p1VuP8ZZ5lEBIn-Sr1Gzq1oKZUKsLKXHYvxjUrWAIeo/edit?usp=sharing).
 
+# Cloning the project
+
+- After cloning the project, use this User ID to login: 611439fa31d61b772ac8ba05
+
 _Team members: Nate Ahiagbedey, Melanie Chan, Tyler Fitzwater, Yuri Kim, Anthony Lucchitti, & Andrew Pomeroy_
