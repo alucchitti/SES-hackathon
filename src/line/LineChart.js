@@ -79,7 +79,7 @@ class LineChart extends React.Component {
         if(indexSource[0] == null){
           return;
         }
-        
+
        console.log(indexSource);
         var indexForDate = indexSource[0].index;
         // use index to find date
@@ -93,14 +93,22 @@ class LineChart extends React.Component {
         // loop through data and calculate
         for (let transaction = 0; transaction < this.props.data.length; transaction++) {
           if (this.props.data[transaction]["date"] === date) {
+
+            // console.log("amount: "+this.props.data[transaction]["amount"]);
+
             // figure out which category to add to
-            if(categories[this.props.data[transaction]["merchant_category"]] != null){
+            if(categories[this.props.data[transaction]["merchant_category"]] != null
+              || categories[this.props.data[transaction]["merchant_category"]] != undefined) {
+
+              // console.log("merchant: "+categories[this.props.data[transaction]["merchant_category"]]);
               categories[this.props.data[transaction]["merchant_category"]] += this.props.data[transaction]["amount"];
             } else{
               categories[this.props.data[transaction]["merchant_category"]] = this.props.data[transaction]["amount"];
             }
           }
         }
+        // console.log("categories: "+Object.keys(categories));
+        // console.log("values: "+Object.values(categories));
 
           this.setState({ pieChartValues: Object.values(categories), pieChartLabels: Object.keys(categories)});// pie values depend on current point's x and y
           console.log("labels");
