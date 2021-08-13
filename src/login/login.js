@@ -7,7 +7,7 @@ import Footer from '../footer/footer';
 import SmartBudgetLogo from './SmartBudgetLogo.png'
 
 var apiKey = '1cb35cfe6eeba07ad5afa33e1e997d12'
-var baseUrl = 'http://api.nessieisreal.com'
+var baseUrl = 'https://mighty-ridge-34468.herokuapp.com/http://api.nessieisreal.com'
 
 class Login extends React.Component {
     constructor(props) {
