@@ -9,7 +9,7 @@ import PieChart from "../pie/Pie.js";
 import axios from "axios";
 
 var apiKey = '1cb35cfe6eeba07ad5afa33e1e997d12'
-var baseUrl = 'https://mighty-ridge-34468.herokuapp.com/http://api.nessieisreal.comhttp://api.nessieisreal.com'
+var baseUrl = 'http://api.nessieisreal.com'
 var categories = ['furniture', 'tech', 'food', 'health'];
 
 class Main extends React.Component {
