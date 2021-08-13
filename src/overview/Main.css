@@ -81,3 +81,11 @@ hr{
 .logout{
     float:right;
 }
+.center-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-chart{
+    width: 800px;
+}

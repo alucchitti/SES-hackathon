@@ -92,9 +92,11 @@ class Main extends React.Component {
         </p>
       </div>
 
-        <div className="center">
-        { console.log(this.state.purchaseData) }
-          <LineChart data={this.state.purchaseData}/>
+        <div className="center-wrap">
+          <div className="center-chart">
+            { console.log(this.state.purchaseData) }
+            <LineChart data={this.state.purchaseData}/>
+          </div>
         </div>
         <br></br>
 
@@ -122,6 +124,9 @@ function Transactions(props){
               {transaction.card}
             </div>
             {transaction.merchant_name}
+            <div>
+            {transaction.merchant_category}
+            </div>
           </div>
             </div>
           </div>
