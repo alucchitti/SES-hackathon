@@ -44,7 +44,7 @@ class LineChart extends React.Component {
     let ldata = {
       labels: labels,
       datasets: [{
-        labels: "My Spending",
+        label: "My Spending",
         data: Object.values(dict),
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
